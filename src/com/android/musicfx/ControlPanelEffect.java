@@ -1131,7 +1131,8 @@ public class ControlPanelEffect {
 
                 // update preferences
                 editor.putBoolean(Key.bb_enabled.toString(), isEnabled);
-                editor.putInt(Key.bb_strength.toString(), settings.strength);
+                if (bassBoostEffect.getStrengthSupported())
+                    editor.putInt(Key.bb_strength.toString(), settings.strength);
             } catch (final RuntimeException e) {
                 Log.e(TAG, errorTag + e);
             }
